@@ -1,0 +1,1 @@
+<?php // PHPMailer Exception class - https://github.com/PHPMailer/PHPMailer ?>

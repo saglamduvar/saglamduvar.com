@@ -1,0 +1,1 @@
+<?php // PHPMailer main class - https://github.com/PHPMailer/PHPMailer ?>

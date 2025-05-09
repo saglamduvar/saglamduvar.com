@@ -1,0 +1,12 @@
+﻿RewriteEngine On
+
+# HTTPS yönlendirmesi
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Aşağıdaki mevcut kurallar korunmuştur
+Options +FollowSymLinks
+IndexIgnore */*
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bahçe Duvarı Hizmetleri ile ilgili galeri sayfası. Bize ulaşın ve en iyi bahçe duvarı hizmetlerinden faydalanın.">
+    <meta name="keywords" content="bahçe duvarı, bahçe yapımı, bahçe duvarı hizmetleri, peyzaj hizmetleri">
+    <meta name="author" content="SAĞLAM Duvar Hizmetleri">
+    <meta property="og:title" content="Galeri - Bahçe Duvarı Hizmetleri">
+    <meta property="og:description" content="Bahçe Duvarı Hizmetleri ile ilgili galeri sayfası. Bize ulaşın ve en iyi bahçe duvarı hizmetlerinden faydalanın.">
+    <meta property="og:image" content="https://www.saglamduvar.com/logo.png">
+    <meta name="robots" content="index, follow">
+    <title>Hizmetler - Bahçe Duvarı Hizmetleri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        header {
+            background-color: #2d3e2f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-out;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+       nav {
+    margin-top: 20px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 25px;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    color: #4CAF50;
+    transform: translateY(-5px);
+}
+
+        .hero-section {
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            padding: 0 20px;
+        }
+
+        .hero-section h2 {
+            font-size: 3em;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .hero-section p {
+            font-size: 1.3em;
+            margin-top: 15px;
+            max-width: 800px;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .gallery-section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        .gallery-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery img.active {
+            transform: scale(1.85);
+            transition: transform 0.1s ease;
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 110px;
+            right: 10px;
+            z-index: 1000;
+        }
+
+        .whatsapp-button img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-button img:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            display: none;
+        }
+
+        .back-to-top:hover {
+            transform: scale(1.1);
+        }
+
+        .contact-button-container {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #f4f4f4;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-button:hover {
+            background-color: #45a049;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bahçe Duvarı Hizmetleri</h1>
+    <nav>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="hizmetler.html">Hizmetler</a>
+        <a href="galeri.html">Galeri</a>
+        <a href="iletisim.html">İletişim</a>
+    </nav>
+</header>
+
+<section class="hero-section">
+    <h2>Bahçenize Estetik ve Güven Katın</h2>
+    <p>Hayallerinizdeki bahçe duvarını inşa etmek için uzman ekibimizle yanınızdayız. Estetik ve güvenli çözümlerle bahçenizi güzelleştiriyoruz.</p>
+</section>
+
+<section class="gallery-section">
+    <h2>Gerçekleştirdiğimiz Projeler</h2>
+    <div class="gallery">
+        <img src="images/1.jpeg" alt="Proje 1" class="gallery-img">
+        <img src="images/2.jpeg" alt="Proje 2" class="gallery-img">
+        <img src="images/3.jpeg" alt="Proje 3" class="gallery-img">
+        <img src="images/4.jpeg" alt="Proje 4" class="gallery-img">
+        <img src="images/5.jpeg" alt="Proje 5" class="gallery-img">
+        <img src="images/6.jpeg" alt="Proje 6" class="gallery-img">
+        <img src="images/7.jpeg" alt="Proje 7" class="gallery-img">
+        <img src="images/8.jpeg" alt="Proje 8" class="gallery-img">
+        <img src="images/9.jpeg" alt="Proje 9" class="gallery-img">
+        <img src="images/10.jpeg" alt="Proje 10" class="gallery-img">
+        <img src="images/11.jpeg" alt="Proje 11" class="gallery-img">
+        <img src="images/12.jpeg" alt="Proje 12" class="gallery-img">
+        <img src="images/13.jpeg" alt="Proje 13" class="gallery-img">
+        <img src="images/14.jpeg" alt="Proje 14" class="gallery-img">
+        <img src="images/15.jpeg" alt="Proje 15" class="gallery-img">
+        <img src="images/16.jpeg" alt="Proje 16" class="gallery-img">
+        <img src="images/17.jpeg" alt="Proje 17" class="gallery-img">
+        <img src="images/18.jpeg" alt="Proje 18" class="gallery-img">
+        <img src="images/19.jpeg" alt="Proje 19" class="gallery-img">
+        <img src="images/20.jpeg" alt="Proje 20" class="gallery-img">
+        <img src="images/21.jpeg" alt="Proje 21" class="gallery-img">
+        <img src="images/22.jpeg" alt="Proje 22" class="gallery-img">
+        <img src="images/23.jpeg" alt="Proje 23" class="gallery-img">
+        <img src="images/24.jpeg" alt="Proje 24" class="gallery-img">
+        <img src="images/25.jpeg" alt="Proje 25" class="gallery-img">
+        <img src="images/26.jpeg" alt="Proje 26" class="gallery-img">
+        <img src="images/27.jpeg" alt="Proje 27" class="gallery-img">
+        <img src="images/28.jpeg" alt="Proje 28" class="gallery-img">
+        <img src="images/29.jpeg" alt="Proje 29" class="gallery-img">
+        <img src="images/30.jpeg" alt="Proje 30" class="gallery-img">
+        <img src="images/31.jpeg" alt="Proje 31" class="gallery-img">
+        <img src="images/32.jpeg" alt="Proje 32" class="gallery-img">
+        <img src="images/33.jpeg" alt="Proje 33" class="gallery-img">
+        <img src="images/34.jpeg" alt="Proje 34" class="gallery-img">
+        <img src="images/35.jpeg" alt="Proje 35" class="gallery-img">
+        <img src="images/36.jpeg" alt="Proje 36" class="gallery-img">
+        <img src="images/37.jpeg" alt="Proje 37" class="gallery-img">
+        <img src="images/38.jpeg" alt="Proje 38" class="gallery-img">
+        <img src="images/39.jpeg" alt="Proje 39" class="gallery-img">
+    </div>
+</section>
+
+<div class="contact-button-container">
+    <a href="iletisim.html" class="contact-button">Bize Ulaşın</a>
+</div>
+
+<div class="whatsapp-button">
+    <a href="https://wa.me/905333690915" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/600px-WhatsApp.svg.png" alt="WhatsApp">
+    </a>
+</div>
+
+<button class="back-to-top" id="backToTopBtn">↑</button>
+
+<footer>
+    <p>&copy; 2025 SAĞLAM Duvar Hizmetleri | <a href="#">Gizlilik Politikası</a></p>
+</footer>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        const images = document.querySelectorAll('.gallery-img');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                images.forEach(image => image.classList.remove('active'));
+                img.classList.add('active');
+                setTimeout(() => {
+                    img.classList.remove('active');
+                }, 3000);
+            });
+
+            img.addEventListener('contextmenu', (e) => {
+                e.preventDefault();
+                alert('Bu görselin kopyalanması engellenmiştir.');
+            });
+
+            img.addEventListener('dragstart', (e) => {
+                e.preventDefault();
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.gallery')) {
+                images.forEach(img => img.classList.remove('active'));
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
