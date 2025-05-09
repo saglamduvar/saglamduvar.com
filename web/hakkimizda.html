@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bahçe Duvarı Hizmetleri ile ilgili iletişim sayfası. Bize ulaşın ve en iyi bahçe duvarı hizmetlerinden faydalanın.">
+    <meta name="keywords" content="bahçe duvarı, bahçe yapımı, bahçe duvarı hizmetleri, peyzaj hizmetleri">
+    <meta property="og:title" content="İletişim - Bahçe Duvarı Hizmetleri">
+    <meta property="og:description" content="Bahçe Duvarı Hizmetleri ile ilgili iletişim sayfası. Bize ulaşın ve en iyi bahçe duvarı hizmetlerinden faydalanın.">
+    <meta property="og:image" content="https://www.saglamduvar.com/logo.png">
+    <meta name="robots" content="index, follow">
+    <title>Hakkımızda - Sağlam Duvar | En İyi Bahçe Hizmetleri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        /* Genel stil */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            background-color: #f7f7f7; /* Açık yeşil/gri tonları */
+            color: #333;
+            font-size: 16px;
+        }
+
+        /* Başlık ve Navigasyon */
+        header {
+            background-color: #2d3e2f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-out;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        }
+
+        nav {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 25px;
+            font-size: 1.2em;
+            letter-spacing: 1px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+            transform: translateY(-5px);
+        }
+
+        /* Hakkımızda Bölümü */
+        .about-section {
+            padding: 60px 20px;
+
+            background-size: cover;
+            color: black;
+            text-align: center;
+            position: relative;
+            background-color: #f0f4f1;
+            z-index: 1;
+        }
+
+
+
+
+        .about-section p {
+            font-size: 1.2em;
+            color: #fff;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-weight: 300;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-align: justify; /* İki yana yaslama */
+        }
+
+        .values-section .value-card p {
+            text-align: justify; /* İki yana yaslama */
+        }
+
+
+
+        .about-section p {
+            font-size: 1.2em;
+            color: black;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-weight: 300;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .about-section .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-shadow: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-section .cta-button:hover {
+            background-color: #45a049;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            transform: translateY(-5px);
+        }
+
+        /* Değerler ve Hedefler Bölümü */
+        .values-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 60px 20px;
+            background-color: #ffffff; /* Beyaz zemin */
+            text-align: center;
+        }
+
+        .value-card {
+            background-color: #eaf7e9;
+            padding: 30px;
+            width: 25%;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .value-card h3 {
+            font-size: 1.8em; /* Küçültülmüş başlık boyutu */
+            margin-bottom: 15px;
+            color: #2d3e2f;
+            font-weight: 600;
+        }
+
+        .value-card p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333; /* Koyu zemin */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* WhatsApp Canlı Destek Butonu */
+        #whatsapp-button {
+            position: fixed;
+            bottom: 110px;
+            right: 10px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        #whatsapp-button img {
+            width: 60px;
+            height: 60px;
+        }
+
+        #whatsapp-button:hover {
+            background-color: #128C7E;
+        }
+
+        /* Animasyonlar */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .about-section h2,
+        .about-section p,
+        .values-section .value-card {
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        /* Sayfaya git butonunun stili */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            display: none; /* Başlangıçta gizli */
+            z-index: 999; /* WhatsApp butonunun üzerinde görünmesi için */
+        }
+
+        .back-to-top:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body oncontextmenu="return false">
+
+    <header>
+        <h1>Bahçe Duvarı Hizmetleri</h1>
+        <nav>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="hizmetler.html">Hizmetler</a>
+            <a href="galeri.html">Galeri</a>
+            <a href="iletisim.html">İletişim</a>
+        </nav>
+    </header>
+
+    <section class="about-section">
+        <h2>Hayalinizdeki Bahçeyi Sağlam ve Estetik Duvarlarla İnşa Ediyoruz</h2>
+        <p>Sağlam Duvar olarak, bahçe duvarı sektöründe [2006] yılından beri müşterilerimize estetik, dayanıklı ve güvenli çözümler sunmaktayız. Küçük bir atölyede başlayan yolculuğumuz, kaliteden ödün vermeyen yaklaşımımız ve müşteri memnuniyetine verdiğimiz önem sayesinde sektörde öncü bir konuma ulaşmıştır. İlk günkü heyecanımızla, yaşam alanlarınıza değer katan projeler üretmeye devam ediyoruz.</p>
+        <p>Bahçeniz, dış dünyadan izole olup huzur bulacağınız bir alan olmalı. SAĞLAM Duvar Hizmetleri olarak, bu misyonla yola çıktık. Bahçenizi, sadece sağlam duvarlarla değil, aynı zamanda estetik dokunuşlarla da güzelleştiriyoruz. Her projeye özenle yaklaşarak, mekânınıza uygun, zarif ve dayanıklı duvarlar inşa ediyoruz.</p>
+        <p>Yıllardır edindiğimiz deneyimle, her tür bahçe için özel çözümler sunuyoruz. Modern tasarımlar ve en kaliteli malzemelerle oluşturduğumuz duvarlar, yalnızca güvenliği değil, aynı zamanda estetiği de ön planda tutar. Bahçenize değer katarken, aynı zamanda size uzun yıllar sürecek bir güven sağlar.</p>
+        <p><strong>Neden Biz?</strong></p>
+        <ul>
+            <li><strong>Kaliteli ve Estetik Tasarımlar:</strong> Bahçeniz için zarif ve şık çözümler.</li>
+            <li><strong>Deneyim ve Uzmanlık:</strong> Yılların verdiği tecrübe ile her proje özelinde mükemmeliyet.</li>
+            <li><strong>Müşteri Memnuniyeti:</strong> Bizim için her proje, müşteri memnuniyeti ile sonlanır.</li>
+        </ul>
+        <p>Hayalinizdeki bahçeyi oluşturmak için bize ulaşın ve birlikte çalışalım!</p>
+        <a href="iletisim.html" class="cta-button">Bize Ulaşın</a>
+    </section>
+
+    <section class="values-section">
+        <div class="value-card">
+            <h3>Güven</h3>
+            <p>Her projede en yüksek güvenlik önlemleriyle sağlam duvarlar inşa ediyoruz.</p>
+        </div>
+        <div class="value-card">
+            <h3>Estetik</h3>
+            <p>Bahçenizi güzelleştirecek şık ve modern duvarlar tasarlıyoruz.</p>
+        </div>
+        <div class="value-card">
+            <h3>Müşteri Memnuniyeti</h3>
+            <p>Her zaman müşteri odaklı çalışarak, sizlere en iyi hizmeti sunmayı hedefliyoruz.</p>
+        </div>
+        <div class="value-card">
+            <h3>Başarılarımız</h3>
+            <p>Tecrübemizle sektördeki en iyi projelere imza atıyoruz.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 SAĞLAM Duvar Hizmetleri. Tüm Hakları Saklıdır. | <a href="privacy-policy.html">Gizlilik Politikası</a></p>
+    </footer>
+
+    <a href="https://wa.me/905333690915" target="_blank" id="whatsapp-button">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+
+    <button class="back-to-top" id="backToTopBtn" onclick="scrollToTop()">
+        ↑
+    </button>
+
+    <script>
+        // Sayfaya git butonunun gösterilip gizlenmesi
+        const backToTopBtn = document.getElementById('backToTopBtn');
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+
+        // Sayfayı yukarı kaydırma fonksiyonu
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Sağ tıklamayı iptal et
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+    </script>
+
+</body>
+</html>

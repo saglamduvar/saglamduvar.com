@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Bahçe Duvarı Hizmetleri ile ilgili iletişim sayfası. Bize ulaşın ve en iyi bahçe duvarı hizmetlerinden faydalanın." />
+    <meta name="keywords" content="bahçe duvarı, bahçe yapımı, bahçe duvarı hizmetleri, peyzaj hizmetleri" />
+    <title>Galeri - Sağlam Duvar</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background: #f4f4f4;
+        }
+
+        header {
+            background-color: #2d3e2f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-out;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        nav {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 25px;
+            font-size: 1.2em;
+            letter-spacing: 1px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+            transform: translateY(-5px);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            top: 25px;
+            right: 20px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                background-color: #2d3e2f;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                z-index: 999;
+            }
+
+            nav a {
+                padding: 15px;
+                border-top: 1px solid #444;
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        .gallery-section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+    .gallery-wrapper {
+      overflow: hidden;
+      position: relative;
+    }
+
+        .gallery {
+            display: inline-flex;
+            flex-wrap: nowrap;
+            transition: none;
+        }
+
+        .gallery img {
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 0.3s;
+            -webkit-user-drag: none;
+        }
+
+        .gallery img:not(:last-child) {
+            margin-right: 20px;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .gallery-buttons {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .gallery-button {
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            font-size: 20px;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        /* Lightbox */
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            -webkit-user-drag: none;
+        }
+
+        #lightbox-prev,
+        #lightbox-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            color: white;
+            font-size: 40px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #lightbox-prev { left: 30px; }
+        #lightbox-next { right: 30px; }
+
+        .contact-button-container {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #f4f4f4;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-button:hover {
+            background-color: #45a049;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bahçe Duvarı Hizmetleri</h1>
+        <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+        <nav id="main-nav">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="hizmetler.html">Hizmetler</a>
+            <a href="galeri.html">Galeri</a>
+            <a href="iletisim.html">İletişim</a>
+        </nav>
+    </header>
+
+    <section class="gallery-section">
+        <h2>Gerçekleştirdiğimiz Projeler</h2>
+        <div class="gallery-wrapper">
+            <div class="gallery" id="gallery">
+                <img src="images/1.jpeg" alt="Proje 1" />
+                <img src="images/2.jpeg" alt="Proje 2" />
+                <img src="images/3.jpeg" alt="Proje 3" />
+                <img src="images/4.jpeg" alt="Proje 4" />
+                <img src="images/5.jpeg" alt="Proje 5" />
+                <img src="images/6.jpeg" alt="Proje 6" />
+                <img src="images/7.jpeg" alt="Proje 7" />
+                <img src="images/8.jpeg" alt="Proje 8" />
+                <img src="images/9.jpeg" alt="Proje 9" />
+                <img src="images/10.jpeg" alt="Proje 10" />
+                <img src="images/11.jpeg" alt="Proje 11" />
+                <img src="images/12.jpeg" alt="Proje 12" />
+                <img src="images/13.jpeg" alt="Proje 13" />
+                <img src="images/14.jpeg" alt="Proje 14" />
+                <img src="images/15.jpeg" alt="Proje 15" />
+                <img src="images/16.jpeg" alt="Proje 16" />
+                <img src="images/17.jpeg" alt="Proje 17" />
+                <img src="images/18.jpeg" alt="Proje 18" />
+                <img src="images/19.jpeg" alt="Proje 19" />
+                <img src="images/20.jpeg" alt="Proje 20" />
+                <img src="images/21.jpeg" alt="Proje 21" />
+                <img src="images/22.jpeg" alt="Proje 22" />
+                <img src="images/23.jpeg" alt="Proje 23" />
+                <img src="images/24.jpeg" alt="Proje 24" />
+                <img src="images/25.jpeg" alt="Proje 25" />
+                <img src="images/26.jpeg" alt="Proje 26" />
+                <img src="images/27.jpeg" alt="Proje 27" />
+                <img src="images/28.jpeg" alt="Proje 28" />
+                <img src="images/29.jpeg" alt="Proje 29" />
+                <img src="images/30.jpeg" alt="Proje 30" />
+                <img src="images/31.jpeg" alt="Proje 31" />
+                <img src="images/32.jpeg" alt="Proje 32" />
+                <img src="images/33.jpeg" alt="Proje 33" />
+                <img src="images/34.jpeg" alt="Proje 34" />
+                <img src="images/35.jpeg" alt="Proje 35" />
+                <img src="images/36.jpeg" alt="Proje 36" />
+                <img src="images/37.jpeg" alt="Proje 37" />
+                <img src="images/38.jpeg" alt="Proje 38" />
+                <img src="images/39.jpeg" alt="Proje 39" />
+            </div>
+        </div>
+        <div class="gallery-buttons">
+            <button class="gallery-button" id="prev">&#10094;</button>
+            <button class="gallery-button" id="next">&#10095;</button>
+        </div>
+    </section>
+
+    <div class="contact-button-container">
+        <a href="iletisim.html" class="contact-button">Bize Ulaşın</a>
+    </div>
+
+    <div id="lightbox">
+        <button id="lightbox-prev">&#10094;</button>
+        <img id="lightbox-img" src="" alt="Büyük Görsel" />
+        <button id="lightbox-next">&#10095;</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 SAĞLAM Duvar | Tüm Hakları Saklıdır</p>
+    </footer>
+
+    <script>
+        // Menü butonu (mobil için)
+        document.getElementById("menu-toggle").addEventListener("click", () => {
+            document.getElementById("main-nav").classList.toggle("show");
+        });
+
+        // Galeri Kaydırma
+        const gallery = document.querySelector('.gallery');
+        const images = document.querySelectorAll('.gallery img');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        const imageWidth = 420;
+        let currentIndex = 1;
+        let isTransitioning = false;
+
+        const firstImageClone = images[0].cloneNode(true);
+        const lastImageClone = images[images.length - 1].cloneNode(true);
+
+        gallery.insertBefore(lastImageClone, images[0]);
+        gallery.appendChild(firstImageClone);
+
+        const allImages = document.querySelectorAll('.gallery img');
+        gallery.style.transform = `translateX(-${imageWidth}px)`;
+
+        function updateGallery() {
+            gallery.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+        }
+
+        function nextSlide() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            currentIndex++;
+            gallery.style.transition = 'transform 0.5s ease-in-out';
+            updateGallery();
+        }
+
+        function prevSlide() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            currentIndex--;
+            gallery.style.transition = 'transform 0.5s ease-in-out';
+            updateGallery();
+        }
+
+        gallery.addEventListener('transitionend', () => {
+            isTransitioning = false;
+            if (currentIndex === 0) {
+                gallery.style.transition = 'none';
+                currentIndex = allImages.length - 2;
+                requestAnimationFrame(() => {
+                    updateGallery();
+                });
+            } else if (currentIndex === allImages.length - 1) {
+                gallery.style.transition = 'none';
+                currentIndex = 1;
+                requestAnimationFrame(() => {
+                    updateGallery();
+                });
+            }
+        });
+
+        prevButton.addEventListener('click', prevSlide);
+        nextButton.addEventListener('click', nextSlide);
+        setInterval(nextSlide, 2500);
+
+        // LIGHTBOX
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const lightboxPrev = document.getElementById("lightbox-prev");
+        const lightboxNext = document.getElementById("lightbox-next");
+
+        let lightboxIndex = 0;
+        const galleryImages = document.querySelectorAll('.gallery img');
+
+        function openLightbox(index) {
+            lightboxIndex = index;
+            lightboxImg.src = galleryImages[index].src;
+            lightbox.style.display = "flex";
+        }
+
+        function closeLightbox() {
+            lightbox.style.display = "none";
+        }
+
+        function showNextImage() {
+            lightboxIndex = (lightboxIndex + 1) % galleryImages.length;
+            lightboxImg.src = galleryImages[lightboxIndex].src;
+        }
+
+        function showPrevImage() {
+            lightboxIndex = (lightboxIndex - 1 + galleryImages.length) % galleryImages.length;
+            lightboxImg.src = galleryImages[lightboxIndex].src;
+        }
+
+        galleryImages.forEach((img, index) => {
+            img.addEventListener("click", () => openLightbox(index));
+            // Sağ tıklamayı engelleme
+            img.addEventListener('contextmenu', (e) => {
+                e.preventDefault();
+                alert('Bu görselin kopyalanması engellenmiştir.');
+            });
+        });
+
+        lightboxNext.addEventListener("click", showNextImage);
+        lightboxPrev.addEventListener("click", showPrevImage);
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (lightbox.style.display === "flex") {
+                if (e.key === "ArrowRight") showNextImage();
+                if (e.key === "ArrowLeft") showPrevImage();
+                if (e.key === "Escape") closeLightbox();
+            }
+        });
+
+        // Lightbox üzerindeki sağ tıklamayı engelleme
+        lightboxImg.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            alert('Bu görselin kopyalanması engellenmiştir.');
+        });
+    </script>
+
+</body>
+</html>
